@@ -31,6 +31,7 @@ void MinDP::buildTable() {
   }
 }
 
+// Mínimo que considera 0 mayor que cualquier número.
 int MinDP::min_(int a, int b)
 {
   if (a == 0) {
@@ -47,6 +48,7 @@ int MinDP::min_(int a, int b)
   }
 }
 
+// Mínimo normal.
 int MinDP::min(int a, int b)
 {
   if (a > b)
@@ -74,6 +76,8 @@ std::vector<int> MinDP::getSolution()
   return backtrack(N, PT);
 }
 
+// La solución quedaría en un vector de tamaño N, cada posición corresponderia a un 
+// tipo de objeto y contendría el número de veces que sería utilizado.
 std::vector<int> MinDP::backtrack(int N_, int PT_) {
   std::cout << N_ << " - " << PT_ << std::endl;
   std::vector<int> partialSolution(N, 0);
